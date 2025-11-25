@@ -1,4 +1,4 @@
-﻿# Gomoku (오목)
+﻿# Gomoku
 
 C# Windows Forms 기반으로 제작된 오목 게임 프로젝트입니다.  
 직관적인 GUI 환경에서 오목을 즐길 수 있고, **로그인 시스템**, **금수(금지수) 판정**, **AI 대전**,  
@@ -6,7 +6,7 @@ C# Windows Forms 기반으로 제작된 오목 게임 프로젝트입니다.
 
 ---
 
-## 📝 프로젝트 소개 (Introduction)
+## 📝 프로젝트 소개
 
 이 프로젝트는 객체 지향 프로그래밍(OOP)을 바탕으로  
 C#과 .NET Framework(Windows Forms)를 사용해 구현되었습니다.
@@ -19,7 +19,7 @@ C#과 .NET Framework(Windows Forms)를 사용해 구현되었습니다.
 
 ---
 
-## 📂 프로젝트 구조 (Project Structure)
+## 📂 프로젝트 구조
 
 ```text
 Game/
@@ -40,7 +40,7 @@ Game/
  ```
 ---
 
-## 📜 게임 규칙 (Game Rules)
+## 📜 게임 규칙
 
 ### 1. 기본 규칙
 
@@ -64,7 +64,7 @@ Game/
 
 ---
 
-### 3. 금지수 (흑 전용)
+### 3. 금수
 
 `OmokRules.cs`에 구현된 룰에 따라, 흑에게 다음과 같은 수들이 금수로 처리됩니다.
 
@@ -77,7 +77,7 @@ Game/
 
 ---
 
-## ✨ 주요 기능 (Features)
+## 주요 기능
 
 - **로그인 / 회원가입 시스템**
   - 간단한 메모리 기반 계정 관리
@@ -103,7 +103,7 @@ Game/
 
 ---
 
-## 🚀 실행 방법 (How to Run)
+##  실행 방법
 
 1. 레포지토리를 클론합니다.
 
@@ -118,8 +118,9 @@ Game/
 
 ---
 
-## 🛠 기술 스택 (Tech Stack)
+## 기술 스택
 
 - Language: C#
 - Framework: .NET Framework (Windows Forms)
 - IDE: Visual Studio
+
