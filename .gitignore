@@ -1,0 +1,13 @@
+﻿.vs/
+*.user
+*.suo
+
+bin/
+obj/
+[Bb]uild/
+[Dd]ebug*/
+[Rr]elease*/
+
+*.log
+*.tmp
+*.cache
