@@ -93,7 +93,6 @@ namespace Game
                 return new Point(mid, mid);
             }
 
-            // 1) AI 당장 이길 수 있는 수
             foreach (var p in moves)
             {
                 boardState[p.X, p.Y] = aiTurn;
@@ -102,7 +101,6 @@ namespace Game
                 if (win) return p;
             }
 
-            // 2) 상대가 이길 수 있는 수 막기
             foreach (var p in moves)
             {
                 boardState[p.X, p.Y] = playerTurn;
@@ -111,7 +109,6 @@ namespace Game
                 if (win) return p;
             }
 
-            // 3) AI 4연속 만들 수 있는 수
             foreach (var p in moves)
             {
                 boardState[p.X, p.Y] = aiTurn;
@@ -120,7 +117,6 @@ namespace Game
                 if (len >= 4) return p;
             }
 
-            // 4) 상대 4연속 막기
             foreach (var p in moves)
             {
                 boardState[p.X, p.Y] = playerTurn;
@@ -129,7 +125,6 @@ namespace Game
                 if (len >= 4) return p;
             }
 
-            // 5) 평가 기반 선택
             return (!useMinimax) ? GetFastMove(moves) : GetSafeMove(moves);
         }
 
@@ -218,7 +213,6 @@ namespace Game
                     if (boardState[x, y] != 0) continue;
                     if (!HasNeighbor(x, y, searchRange)) continue;
 
-                    // 흑이 AI면 금수 체크
                     if (aiTurn == 1)
                     {
                         int r = OmokRules.CheckForForbiddenMove(boardState, x, y);

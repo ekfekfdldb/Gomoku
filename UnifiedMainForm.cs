@@ -285,7 +285,7 @@ namespace Game
                             "   5つ連続すると勝ちです。\n" +
                             "3. 黒には禁じ手(三々・四々・六目)が適用されます。";
                     }
-                    else // EN
+                    else
                     {
                         return
                             "[ Omok Rules ]\n\n" +
@@ -505,31 +505,26 @@ namespace Game
 
             Rectangle rect = _pnlIntro.ClientRectangle;
 
-            // 메인 메뉴일 때
             if (_introSeq == IntroSeq.ShowButtons && _mainMenuBgImage != null)
             {
                 Image img = _mainMenuBgImage;
 
-                // 패널 전체를 먼저 흰색으로 한번 지우고
                 g.Clear(Color.White);
 
-                // ===== 비율 유지 + 잘라서(크롭) 전체를 채우기 =====
                 float imgRatio = (float)img.Width / img.Height;
                 float rectRatio = (float)rect.Width / rect.Height;
 
-                Rectangle src;          // 이미지 안에서 잘라올 영역
-                Rectangle dest = rect;  // 패널 전체
+                Rectangle src;
+                Rectangle dest = rect;
 
                 if (rectRatio > imgRatio)
                 {
-                    // 폼이 더 가로로 넓음 -> 위아래를 잘라냄
                     int cropH = (int)(img.Width / rectRatio);
                     int y = (img.Height - cropH) / 2;
                     src = new Rectangle(0, y, img.Width, cropH);
                 }
                 else
                 {
-                    // 폼이 더 세로로 김 -> 좌우를 잘라냄
                     int cropW = (int)(img.Height * rectRatio);
                     int x = (img.Width - cropW) / 2;
                     src = new Rectangle(x, 0, cropW, img.Height);
@@ -539,7 +534,6 @@ namespace Game
             }
             else
             {
-                // 기존 그라디언트 코드 그대로
                 using (LinearGradientBrush br =
                     new LinearGradientBrush(rect,
                         Color.FromArgb(245, 247, 250),
@@ -549,7 +543,6 @@ namespace Game
                     g.FillRectangle(br, rect);
                 }
 
-                // 로고 페이드 부분도 기존 코드 유지
                 if ((_introSeq == IntroSeq.LogoFadeIn ||
                      _introSeq == IntroSeq.LogoStay ||
                      _introSeq == IntroSeq.LogoFadeOut) && _logoImage != null)
@@ -839,7 +832,6 @@ namespace Game
                     if (_currentUser != null) _lblP1.Text = _currentUser.Nickname;
                     _lblP2.Text = _isAiMode ? "AI" : GetText("Opponent");
 
-                    // 게임 상태 초기화 + 타이머 시작
                     ResetGameState();
                     StartTurnTimer();
                 };

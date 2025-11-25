@@ -35,7 +35,6 @@ namespace Game
             _useAi = useAI;
             if (_useAi)
             {
-                // AI = 백(2), 플레이어 = 흑(1)
                 _ai = new OmokAI(_board, (int)Stone.White, (int)Stone.Black);
             }
         }
@@ -64,7 +63,6 @@ namespace Game
                 int geumsu = OmokRules.CheckForForbiddenMove(_board, x, y);
                 if (geumsu != OmokRules.GEUMSU_NONE)
                 {
-                    // 착수 금지
                     OmokRules.CalculateForbiddenSpots(_board, _forbiddenSpots);
                     return false;
                 }

@@ -58,7 +58,6 @@ namespace Game
             }
             return count;
         }
-
         public static int CheckForForbiddenMove(int[,] boardState, int x, int y)
         {
             CurX = x;
